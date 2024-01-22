@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: ./mysql/Dockerfile-mysql
+    image: john-db
+    restart: always
+    ports:
+      - 3306:3306
+  app:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile-php
+    image: john-php
+    restart: always
+    ports:
+      - 8000:8000
