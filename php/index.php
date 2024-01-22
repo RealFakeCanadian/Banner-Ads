@@ -6,7 +6,7 @@
     <title>MYSQL Table</title>
     <meta name="description" content="Docker with PHP/mySQL">
     <meta name="author" content="John Elias">
-<style>table td {border:1px solid #000;width:33%}</style>
+<style>table td {border:1px solid #000;width:25%}</style>
 </head>
 
 <body>
@@ -14,8 +14,9 @@
     <div class=".db-table">
         <table style='width:99%'>
             <tr>
-                <th style='width:33%'>Id</th>
-                <th style='width:33%'>Category</th>
+                <th>Id</th>
+                <th>Banner Name</th>
+                <th>Category</th>
                 <th>Content</th>
             </tr>
             <?php
@@ -25,7 +26,7 @@
             try {
                 $dbh = new PDO('mysql:host=db;port=3306;dbname=app', $user, $pass);
                 foreach ($dbh->query('SELECT * from content') as $row) {
-                    $html = "<tr><td>${row['id']}</td><td>${row['category']}</td><td>${row['content']}</td></tr>";
+                    $html = "<tr><td>${row['id']}</td><td>${row['banner_name']}</td><td>${row['category']}</td><td>${row['content']}</td></tr>";
                     echo $html;
                 }
                 $dbh = null;
