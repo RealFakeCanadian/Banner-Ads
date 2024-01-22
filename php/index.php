@@ -6,11 +6,13 @@
     <title>MYSQL Table</title>
     <meta name="description" content="Docker with PHP/mySQL">
     <meta name="author" content="John Elias">
-<style>table td {border:1px solid #000;width:25%}</style>
+    <style>table td {border:1px solid #000;width:25%}</style>
+<link href="bannerStyles.css" rel="stylesheet">
 </head>
 
 <body>
     <h1>Docker PHP/MYSQL</h1>
+    <h2>Stylesheet = bannerStyles.css in root</h2>
     <div class=".db-table">
         <table style='width:99%'>
             <tr>
