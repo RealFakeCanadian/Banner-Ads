@@ -14,7 +14,7 @@
     <h1>Docker PHP/MYSQL</h1>
     <h2>Stylesheet = bannerStyles.css in root</h2>
     <div class=".db-table">
-        <table style='width:99%'>
+        <table class="list">
             <tr>
                 <th>Id</th>
                 <th>Banner Name</th>
