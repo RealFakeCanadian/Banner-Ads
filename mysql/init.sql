@@ -11,6 +11,6 @@ CREATE TABLE content (
 
 INSERT INTO content (category,content)
 VALUES
-    ("cat1","cont1"),
-    ("cat2","cont2"),
-    ("cat3","cont3");
+    ("banner_name1","cat1","cont1"),
+    ("","cat2","cont2"),
+    ("banner_name3","cat3","cont3");
