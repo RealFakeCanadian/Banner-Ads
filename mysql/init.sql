@@ -3,8 +3,9 @@ USE app;
 
 CREATE TABLE content (
                          id INT NOT NULL AUTO_INCREMENT,
-                         category VARCHAR(50) NOT NULL,
-                         content VARCHAR(50) NOT NULL,
+                         banner_name VARCHAR(100),
+                         category VARCHAR(100) NOT NULL,
+                         content VARCHAR(2000) NOT NULL,
                          PRIMARY KEY(id)
 );
 
