@@ -9,7 +9,7 @@ CREATE TABLE content (
                          PRIMARY KEY(id)
 );
 
-INSERT INTO content (category,content)
+INSERT INTO content (banner_name,category,content)
 VALUES
     ("banner_name1","cat1","cont1"),
     ("","cat2","cont2"),
