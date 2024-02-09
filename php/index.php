@@ -13,6 +13,9 @@
 </head>
 
 <body>
+
+    <div id="container">
+
     <h1>Docker PHP/MYSQL</h1>
     <h2>Stylesheet = bannerStyles.css in root</h2>
     <br />
@@ -41,6 +44,47 @@
             }
             ?>
         </table>
+    </div>
+
+
+
+        <div id="container">
+
+        <h1>Docker PHP/MYSQL</h1>
+        <h2>Stylesheet = bannerStyles.css in root</h2>
+        <br />
+        <div class=".db-table">
+            <table class="list">
+                <tr>
+                    <th>Id</th>
+                    <th>Banner Name</th>
+                    <th>Category</th>
+                    <th>Content</th>
+                </tr>
+                <?php
+                $user = 'root';
+                $pass = 'example';
+
+                try {
+                    $dbh = new PDO('mysql:host=db;port=3306;dbname=app', $user, $pass);
+                    foreach ($dbh->query('SELECT * from content') as $row) {
+                        $html = "<tr><td>${row['id']}</td><td>${row['banner_name']}</td><td>${row['category']}</td><td>${row['content']}</td></tr>";
+                        echo $html;
+                    }
+                    $dbh = null;
+                } catch (PDOException $e) {
+                    print "Error!: " . $e->getMessage() . "<br/>";
+                    die();
+                }
+                ?>
+            </table>
+        </div>
+
+
+
+
+
+
     </div>
 </body>
 

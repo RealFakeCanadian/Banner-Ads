@@ -6,3 +6,4 @@ html {margin:4px;}
 table.list {width:99%;}
 table.list  td{background:none repeat 0 0 #FBF9FA;color:#B7B7B7;width:25%}
 
+div#container {margin:10px;border: 5px solid red}
