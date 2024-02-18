@@ -5,7 +5,7 @@ COPY ./php/index.php /usr/src/app/index.php
 COPY ./php/indexJquery.php /usr/src/app/indexJquery.php
 COPY ./php/bannerStyles.css /usr/src/app/bannerStyles.css
 
-# Move our jQuery files inot the container
+# Move our jQuery files into the container
 RUN mkdir /usr/src/app/jquery
 RUN mkdir /usr/src/app/jquery/external
 RUN mkdir /usr/src/app/jquery/external/jquery

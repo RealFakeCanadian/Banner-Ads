@@ -30,3 +30,12 @@ VALUES
     ("","cat2","cont2"),
     ("position_name","cat3","cont3");
 
+CREATE TABLE client_info (
+                             client_id INT NOT NULL AUTO_INCREMENT,
+                             client_first_name VARCHAR(100) NOT NULL,
+                             client_last_name VARCHAR(100) NOT NULL,
+                             gender VARCHAR(6) NOT NULL,
+                             client_address VARCHAR(100) NOT NULL,
+                             client_email_address VARCHAR(100) NOT NULL,
+                             PRIMARY KEY(client_id)
+);
