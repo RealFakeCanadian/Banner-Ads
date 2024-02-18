@@ -1,0 +1,51 @@
+<input name="personname" value="">
+
+<td style="padding:10px 10px 0px 0px">
+
+<input name="%%Surrogate_role" type="hidden" value="1"><label>
+<input type="checkbox" name="role" value="Project Manager">Project Manager</label><br>
+<label>
+<input type="checkbox" name="role" value="Developer">Developer</label><br>
+<label>
+<input type="checkbox" name="role" value="Production Support">Production Support</label><br>
+<label>
+<input type="checkbox" name="role" value="Business Analyst">Business Analyst</label><br>
+<label>
+<input type="checkbox" name="role" value="QA Analyst">QA Analyst</label><br>
+<label>
+<input type="checkbox" name="role" value="Security Analyst">Security Analyst</label><br>
+<label>
+<input type="checkbox" name="role" value="DevOps">DevOps</label><br>
+<label>
+<input type="checkbox" name="role" value="Scrum Master">Scrum Master</label><br>
+<label>
+<input type="checkbox" name="role" value="Information Security Manager">Information Security Manager</label><br>
+<label>
+<input type="checkbox" name="role" value="Information Security Engineer">Information Security Engineer</label><br>
+<label>
+<input type="checkbox" name="role" value="Cloud Security Architect">Cloud Security Architect</label><br>
+<label>
+<input type="checkbox" name="role" value="Application security administrator ">Application security administrator</label><br>
+<label>
+<input type="checkbox" name="role" value="Cybersecurity analyst ">Cybersecurity analyst</label><br>
+<label>
+<input type="checkbox" name="role" value="Cybersecurity specialist ">Cybersecurity specialist</label><br>
+<label>
+<input type="checkbox" name="role" value="Data Security Specialist ">Data Security Specialist</label><br>
+<label>
+<input type="checkbox" name="role" value="Business Intelligence (BI) Manager">Business Intelligence (BI) Manager</label><br>
+<label>
+<input type="checkbox" name="role" value="Business intelligence developer ">Business intelligence developer</label><br>
+<label>
+<input type="checkbox" name="role" value="Business intelligence specialist ">Business intelligence specialist</label><br>
+<label>
+<input type="checkbox" name="role" value="Business Analytics (BA) Specialist ">Business Analytics (BA) Specialist</label><br>
+<label>
+<input type="checkbox" name="role" value="Data Quality Manager">Data Quality Manager</label><br>
+<label>
+<input type="checkbox" name="role" value="Data Analyst">Data Analyst</label><br>
+<label>
+<input type="checkbox" name="role" value="Business Applications Manager ">Business Applications Manager</label><br>
+<label>
+<input type="checkbox" name="role" value="Application developer">Application developer</label>
+</td>
