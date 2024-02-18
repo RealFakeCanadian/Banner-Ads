@@ -2,6 +2,7 @@ FROM php:7.4-cli
 
 # Move our PHP file into the container
 COPY ./php/index.php /usr/src/app/index.php
+COPY ./php/_ajaxcommands.php /usr/src/app/_ajaxcommands.php
 COPY ./php/indexJquery.php /usr/src/app/indexJquery.php
 COPY ./php/bannerStyles.css /usr/src/app/bannerStyles.css
 

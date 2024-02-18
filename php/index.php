@@ -47,9 +47,9 @@
                 $dbh = new PDO('mysql:host=db;port=3306;dbname=app', $_ENV['user'], $_ENV['pass']);
                 foreach ($dbh->query('SELECT * from content') as $row) {
                     $html = "<tr><td>${row['id']}</td>
-                             <td><input name='contentnameinput' value='${row['content_name']}'></td>
-                             <td><input name='categoryinput' value='${row['category']}'></td>
-                             <td><input name='contentinput' value='${row['content']}'></td></tr>";
+                             <td><input name='contentnameinput_${row['id']}' value='${row['content_name']}'></td>
+                             <td><input name='categoryinput_${row['id']}' value='${row['category']}'></td>
+                             <td><input name='contentinput_${row['id']}' value='${row['content']}'></td></tr>";
                     echo $html;
                 }
                 $dbh = null;
