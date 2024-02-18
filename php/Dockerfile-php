@@ -2,6 +2,7 @@ FROM php:7.4-cli
 
 # Move our PHP file into the container
 COPY ./php/index.php /usr/src/app/index.php
+COPY ./php/indexJquery.php /usr/src/app/indexJquery.php
 COPY ./php/bannerStyles.css /usr/src/app/bannerStyles.css
 
 # Move our jQuery files inot the container
@@ -12,6 +13,8 @@ RUN mkdir /usr/src/app/jquery/images
 
 COPY ./jquery/*.* /usr/src/app/jquery/
 
+ENV user=root
+ENV pass=example
 
 # Make things easier if you shell in
 WORKDIR /usr/src/app

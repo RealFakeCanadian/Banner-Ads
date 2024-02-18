@@ -1,5 +1,5 @@
-<script type="text/javascript" src="jquery"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
 
 <link rel="stylesheet" href="newmenu/bootstrap.min.css">
 
-<script type="text/javascript" src="newmenu/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui.js"></script>
