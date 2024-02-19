@@ -11,6 +11,8 @@
     <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
      <!-- The JQUERY UI js Library -->
     <script type="text/javascript" src="jquery/jquery-ui.js"></script>
+    <!-- Our Custom AJAX Script Library -->
+    <script type="text/javascript" src="_ajaxscriptlibrary.js"></script>
 
 
     <link href="bannerStyles.css" rel="stylesheet">
@@ -45,9 +47,9 @@
                 $dbh = new PDO('mysql:host=db;port=3306;dbname=app', $_ENV['user'], $_ENV['pass']);
                 foreach ($dbh->query('SELECT * from content') as $row) {
                     $html = "<tr><td>${row['id']}</td>
-                             <td><input name='contentnameinput_${row['id']}' value='${row['content_name']}'></td>
-                             <td><input name='categoryinput_${row['id']}' value='${row['category']}'></td>
-                             <td><input name='contentinput_${row['id']}' value='${row['content']}'></td></tr>";
+                             <td><input onchange=updateDBItem('content',${row['id']},'content_name',this.value) id=contentnameinput_${row['id']} name=contentnameinput_${row['id']} value=${row['content_name']}></td>
+                             <td><input onchange=updateDBItem('content',${row['id']},'category',this.value) id=categoryinput_${row['id']}  name=categoryinput_${row['id']} value=${row['category']}></td>
+                             <td><input onchange=updateDBItem('content',${row['id']},'content',this.value) id=contentinput_${row['id']} name=contentinput_${row['id']} value=${row['content']}></td></tr>";
                     echo $html;
                 }
                 $dbh = null;

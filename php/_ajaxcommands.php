@@ -6,8 +6,7 @@ $rowid = $_REQUEST["rowid"];
 $columnname = $_REQUEST["columnname"];
 $columnvalue = $_REQUEST["columnvalue"];
 
-echo $tablename;
-echo "--";
+
 $query_command="update app.".$tablename." set ".$columnname."='".$columnvalue. "' where id=".$rowid;
 //echo "update app.".$tablename." set ".$columnname."='".$columnvalue. "' where id=".$rowid;
 echo $query_command;
