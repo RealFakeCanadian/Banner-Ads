@@ -20,11 +20,9 @@
 <body>
 
     <div id="container">
-
-    <h1>Docker PHP/MYSQL</h1>
-    <h2>Stylesheet = bannerStyles.css in root</h2>
-
-
+    <div id="upper_banner">
+        <img src="/images/darbytek-logo-white.png" />
+    </div>
     <br />
     <div class=".db-table">
         <table class="list">
@@ -172,6 +170,10 @@
         }
 
         ?>
+        <div id="footer_container">
+            <span class="help_text">An area reserved for a footer.  using it right now to display console type messages.</span>
+            <div id="console_log_display"></div>
+        </div>
     </div>
 </body>
 

@@ -6,8 +6,12 @@ html {margin:4px;}
 table.list {width:99%;}
 table.list  td{padding:5px;background:none repeat 0 0 #FBF9FA;color:#B7B7B7;width:25%}
 
-div#container {padding:2px;margin:10px;border: 5px solid red}
+div#container {height:99%;padding:2px;margin:10px;border: 5px solid red}
 
+div#upper_banner {text-align:left;height:60px;width:100%;background-color:#007fff}
+div#upper_banner img {height:59px;width:auto}
+div#footer_container {height:25px;border: 1px solid green}
+span.console_log_display {font-family:"Courier New";font-size: small}
 
 /* jquery specific styles */
 body {

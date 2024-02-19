@@ -7,12 +7,15 @@ COPY ./php/indexJquery.php /usr/src/app/indexJquery.php
 COPY ./php/bannerStyles.css /usr/src/app/bannerStyles.css
 
 # Move our jQuery files into the container
-RUN mkdir /usr/src/app/jquery
-RUN mkdir /usr/src/app/jquery/external
+RUN mkdir /usr/src/app/jquery/
+RUN mkdir /usr/src/app/jquery/external/
 RUN mkdir /usr/src/app/jquery/external/jquery
-RUN mkdir /usr/src/app/jquery/images
-
+RUN mkdir /usr/src/app/jquery/images/
 COPY ./jquery/*.* /usr/src/app/jquery/
+
+# Create an image directory
+RUN mkdir /usr/src/app/images
+COPY ./images/*.* /usr/src/app/images/
 
 ENV user=root
 ENV pass=example
