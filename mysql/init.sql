@@ -39,3 +39,20 @@ CREATE TABLE client_info (
                              client_email_address VARCHAR(100) NOT NULL,
                              PRIMARY KEY(client_id)
 );
+
+
+
+
+CREATE TABLE people (
+                             id INT NOT NULL AUTO_INCREMENT,
+                             first_name VARCHAR(100) NOT NULL,
+                             last_name VARCHAR(100) NOT NULL,
+                             gender VARCHAR(6) NOT NULL,
+                             address VARCHAR(100) NOT NULL,
+                             email VARCHAR(100) NOT NULL,
+                             PRIMARY KEY(id)
+);
+
+INSERT INTO people (first_name,last_name,gender,address,email)
+VALUES
+    ("first_name","last_name","gender","address","email");

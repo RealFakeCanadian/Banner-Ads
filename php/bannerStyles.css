@@ -4,6 +4,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 html {margin:4px;}
 table.list {width:99%;}
+table.list th {text-align:left}
 table.list  td{padding:5px;background:none repeat 0 0 #FBF9FA;color:#B7B7B7;width:25%}
 
 div#container {height:99%;padding:2px;margin:10px;border: 5px solid red}
@@ -12,6 +13,9 @@ div#upper_banner {text-align:left;height:60px;width:100%;background-color:#007ff
 div#upper_banner img {height:59px;width:auto}
 div#footer_container {height:55px;border: 1px solid green}
 div#console_log_display {font-family:"Courier New";font-size: small}
+div.modal_dialog {display:none}
+#add_person_link {margin-bottom:10px;border:1px solid green;padding:5px;background-color:lightcyan}
+#add_person_link:hover {background-color:lightgoldenrodyellow}
 
 /* jquery specific styles */
 body {

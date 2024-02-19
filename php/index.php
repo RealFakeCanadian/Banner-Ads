@@ -28,9 +28,10 @@
     <br />
     <div class=".db-table">
         <table class="list">
+            <thead><tr><th colspan=4>Content Table</th></thead>
             <tr>
                 <th>Id</th>
-                <th>Banner Name</th>
+                <th>Content Name</th>
                 <th>Category</th>
                 <th>Content</th>
             </tr>
@@ -61,25 +62,30 @@
         </table>
     </div>
 
-
+        <br /><br />
+        <hr />
 
 
         <div class=".db-table">
             <table class="list">
                 <tr>
                     <th>Id</th>
-                    <th>Content Name</th>
-                    <th>Category</th>
-                    <th>Content</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Email</th>
                 </tr>
                 <?php
                 try {
                     $dbh = new PDO('mysql:host=db;port=3306;dbname=app', $_ENV['user'], $_ENV['pass']);
-                    foreach ($dbh->query('SELECT * from positions') as $row) {
+                    foreach ($dbh->query('SELECT * from people') as $row) {
                         $html = "<tr><td>${row['id']}</td>
-                                 <td>${row['banner_name']}</td>
-                                 <td>${row['category']}</td>
-                                 <td>${row['content']}</td>
+                                 <td>${row['first_name']}</td>
+                                 <td>${row['last_name']}</td>
+                                 <td>${row['gender']}</td>
+                                 <td>${row['address']}</td>
+                                 <td>${row['email']}</td>
                                  </tr>";
                         echo $html;
                     }
@@ -91,6 +97,22 @@
                 ?>
             </table>
         </div>
+
+        <!-- Since this is an HTML Form post lets put it in a dialog box, so we don't have
+             to take people off our page to complete it.  Hide it until requested and then
+             call it in a modal dialog box
+
+             I just started it by hiding it until its requested by the add person link.
+
+             see if you can work on making it modal and positioning it over the page content
+             you have what you need to call jquery commands already instrumented on the page
+
+             https://jqueryui.com/dialog/
+
+             -->
+
+        <a id='add_person_link' href="Javascript:void(0)" onclick="$('.modal_dialog').css('display','block')">Add Person</a>
+        <div class="modal_dialog">
         <form method="POST">
             <p>
                 <label for="firstName">First Name:</label>
@@ -126,6 +148,7 @@
 
             <input type="submit" value="Submit">
         </form>
+
         <?php
         //
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -171,7 +194,9 @@
             }
         }
 
+
         ?>
+        </div>
         <div id="footer_container">
             <span class="help_text">An area reserved for a footer.  using it right now to display console type messages.</span>
             <div id="console_log_display"></div>
