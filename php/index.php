@@ -13,17 +13,16 @@
     <script type="text/javascript" src="jquery/jquery-ui.js"></script>
     <!-- Our Custom AJAX Script Library -->
     <script type="text/javascript" src="_ajaxscriptlibrary.js"></script>
-
+    <!-- Our Custom Modal Dialog Form Library -->
+    <script type="text/javascript" src="_newpersonform.js"></script>
 
     <link href="bannerStyles.css" rel="stylesheet">
-
+    <link href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
 </head>
-
 <body>
-
-    <div id="container">
+<div id="container">
     <div id="upper_banner">
-        <img src="/images/darbytek-logo-white.png" />
+        <img alt="logo" src="/images/darbytek-logo-white.png" />
     </div>
     <br />
     <div class=".db-table">
@@ -68,6 +67,7 @@
 
         <div class=".db-table">
             <table class="list">
+                <thead><tr><th colspan=7>People Table</th></thead>
                 <tr>
                     <th>Id</th>
                     <th>First Name</th>
@@ -75,6 +75,7 @@
                     <th>Gender</th>
                     <th>Address</th>
                     <th>Email</th>
+                    <th>Person Type</th>
                 </tr>
                 <?php
                 try {
@@ -86,6 +87,7 @@
                                  <td>${row['gender']}</td>
                                  <td>${row['address']}</td>
                                  <td>${row['email']}</td>
+                                 <td>${row['person_type']}</td>
                                  </tr>";
                         echo $html;
                     }
@@ -102,7 +104,7 @@
              to take people off our page to complete it.  Hide it until requested and then
              call it in a modal dialog box
 
-             I just started it by hiding it until its requested by the add person link.
+             I just started it by hiding it until it's requested by the add person link.
 
              see if you can work on making it modal and positioning it over the page content
              you have what you need to call jquery commands already instrumented on the page
@@ -111,42 +113,44 @@
 
              -->
 
-        <a id='add_person_link' href="Javascript:void(0)" onclick="$('.modal_dialog').css('display','block')">Add Person</a>
-        <div class="modal_dialog">
-        <form method="POST">
-            <p>
-                <label for="firstName">First Name:</label>
-                <input type="text" name="first_name" id="firstName" required>
-            </p>
-
-
-            <p>
-                <label for="lastName">Last Name:</label>
-                <input type="text" name="last_name" id="lastName" required>
-            </p>
-
-
-            <p>
-                <label for="Gender">Gender:</label>
-                <select name="gender" id="Gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-            </p>
-
-
-            <p>
-                <label for="Address">Address:</label>
-                <input type="text" name="address" id="Address" required>
-            </p>
-
-
-            <p>
-                <label for="emailAddress">Email Address:</label>
-                <input type="text" name="email" id="emailAddress" pattern=".+@gmail.com" required>
-            </p>
-
-            <input type="submit" value="Submit">
+        <button id="create-user">Create New Person</button>
+        <div id="footer_container">
+            <span class="help_text">An area reserved for a footer.  using it right now to display console type messages.</span>
+            <div id="console_log_display"></div>
+        </div>
+        <div id="dialog-form" title="Create new user">
+            <p class="validateTips">All form fields are required.</p>
+            <form>
+            <fieldset>
+                <p>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName" class="text ui-widget-content ui-corner-all">
+                </p>
+                <p>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" class="text ui-widget-content ui-corner-all">
+                </p>
+                <p>
+                    <label for="gender">Gender:</label>
+                    <select name="gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" id="address" class="text ui-widget-content ui-corner-all">
+                </p>
+                <p>
+                    <label for="emailAddress">Email Address:</label>
+                    <input type="text" name="emailAddress" id="emailAddress" pattern=".+@gmail.com" class="text ui-widget-content ui-corner-all">
+                </p>
+                <p>
+                    <label for="personType">Person Type:</label>
+                    <input type="text" name="personType" id="personType" class="text ui-widget-content ui-corner-all">
+                </p>
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
         </form>
 
         <?php
@@ -196,12 +200,8 @@
 
 
         ?>
-        </div>
-        <div id="footer_container">
-            <span class="help_text">An area reserved for a footer.  using it right now to display console type messages.</span>
-            <div id="console_log_display"></div>
-        </div>
     </div>
+</div>
 </body>
 
 </html>

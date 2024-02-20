@@ -13,10 +13,6 @@ div#upper_banner {text-align:left;height:60px;width:100%;background-color:#007ff
 div#upper_banner img {height:59px;width:auto}
 div#footer_container {height:55px;border: 1px solid green}
 div#console_log_display {font-family:"Courier New";font-size: small}
-div.modal_dialog {display:none}
-#add_person_link {margin-bottom:10px;border:1px solid green;padding:5px;background-color:lightcyan}
-#add_person_link:hover {background-color:lightgoldenrodyellow}
-
 /* jquery specific styles */
 body {
     font-family: Arial, Helvetica, sans-serif;

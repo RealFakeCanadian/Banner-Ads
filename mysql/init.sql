@@ -50,9 +50,10 @@ CREATE TABLE people (
                              gender VARCHAR(6) NOT NULL,
                              address VARCHAR(100) NOT NULL,
                              email VARCHAR(100) NOT NULL,
+                             person_type VARCHAR(100) NOT NULL,
                              PRIMARY KEY(id)
 );
 
-INSERT INTO people (first_name,last_name,gender,address,email)
+INSERT INTO people (first_name,last_name,gender,address,email,person_type)
 VALUES
-    ("first_name","last_name","gender","address","email");
+    ("first_name","last_name","gender","address","email","person_type");
