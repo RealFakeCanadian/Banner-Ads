@@ -120,7 +120,7 @@
         </div>
         <div id="dialog-form" title="Create new user">
             <p class="validateTips">All form fields are required.</p>
-            <form>
+            <form id="newPersonForm" action="" method="post">
             <fieldset>
                 <p>
                     <label for="firstName">First Name:</label>
@@ -152,54 +152,6 @@
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
             </fieldset>
         </form>
-
-        <?php
-        //
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-            // collect value of input field
-            $data = $_REQUEST;
-
-            if (empty($data)) {
-                echo "data is empty";
-            } else {
-                try {
-                    $dbh = new PDO('mysql:host=db;port=3306;dbname=app', $_ENV['user'], $_ENV['pass']);
-                    $client_info = "INSERT INTO client_info(client_first_name, client_last_name, gender, client_address, client_email_address) VALUES (?, ?, ?, ?, ?)";
-                    $statement = $dbh->prepare($client_info);
-                    $statement->execute([$_REQUEST['first_name'], $_REQUEST['last_name'], $_REQUEST['gender'], $_REQUEST['address'], $_REQUEST['email']]);
-                    echo "<div class=\".db-table\">
-            <table class=\"list\">
-                <tr>
-                    <th>Id</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Gender</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                </tr>";
-                    foreach ($dbh->query('SELECT * from client_info') as $row) {
-                        $html = "<tr><td>".filter_var($row['client_id'], FILTER_SANITIZE_SPECIAL_CHARS)."</td>
-                                 <td>".filter_var($row['client_last_name'], FILTER_SANITIZE_SPECIAL_CHARS)."</td>
-                                 <td>".filter_var($row['client_first_name'], FILTER_SANITIZE_SPECIAL_CHARS)."</td>
-                                 <td>".filter_var($row['gender'], FILTER_SANITIZE_SPECIAL_CHARS)."</td>
-                                 <td>".filter_var($row['client_address'], FILTER_SANITIZE_SPECIAL_CHARS)."</td>
-                                 <td>".filter_var($row['client_email_address'], FILTER_SANITIZE_SPECIAL_CHARS)."</td>
-                                 </tr>";
-                        echo $html;
-                    }
-                    echo"</table>
-        </div>";
-                    $dbh = null;
-                } catch (PDOException $e) {
-                    print "Error!: " . $e->getMessage() . "<br/>";
-                    die();
-                }
-            }
-        }
-
-
-        ?>
     </div>
 </div>
 </body>

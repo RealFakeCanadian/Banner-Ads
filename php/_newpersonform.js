@@ -59,6 +59,23 @@ $( function() {
         valid = valid && checkRegexp( emailAddress, emailRegex, "eg. ui@jquery.com" );
 
         if ( valid ) {
+            allFields.removeClass( "ui-state-error" );
+            $.ajax({
+                // Action
+                url: '_ajaxcommands.php',
+                // Method
+                type: 'POST',
+                data: {
+                    // Get value
+                    firstName: $("input[name=firstName]").val(),
+                    lastName: $("input[name=lastName]").val(),
+                    gender: $("select[name=gender]").val(),
+                    address: $("input[name=address]").val(),
+                    emailAddress: $("input[name=emailAddress]").val(),
+                    personType: $("input[name=personType]").val(),
+                    action: "insert"
+                },
+            });
             dialog.dialog( "close" );
         }
         return valid;
