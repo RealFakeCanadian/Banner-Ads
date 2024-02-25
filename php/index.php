@@ -65,7 +65,7 @@
         <hr />
 
 
-        <div class=".db-table">
+        <div class=".db-table" id="person-table">
             <table class="list">
                 <thead><tr><th colspan=7>People Table</th></thead>
                 <tr>

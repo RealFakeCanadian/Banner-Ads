@@ -44,7 +44,6 @@ $( function() {
 
     function addUser() {
         var valid = true;
-        allFields.removeClass( "ui-state-error" );
 
         valid = valid && checkLength( firstName, "First Name", 1, 100 );
         valid = valid && checkLength( lastName, "Last Name", 1, 100 );
@@ -57,9 +56,11 @@ $( function() {
         valid = valid && checkRegexp( firstName, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
         valid = valid && checkRegexp( lastName, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
         valid = valid && checkRegexp( emailAddress, emailRegex, "eg. ui@jquery.com" );
+        //valid = valid && checkEmail( emailAddress );
 
         if ( valid ) {
             allFields.removeClass( "ui-state-error" );
+            updateTips( "" );
             $.ajax({
                 // Action
                 url: '_ajaxcommands.php',
@@ -75,6 +76,9 @@ $( function() {
                     personType: $("input[name=personType]").val(),
                     action: "insert"
                 },
+                success:function(){
+                    $("#person-table").load("loadPeopleTable.php");
+                }
             });
             dialog.dialog( "close" );
         }

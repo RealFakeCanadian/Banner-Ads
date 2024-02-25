@@ -41,6 +41,5 @@ function insert(){
     $person_info = "INSERT INTO people(first_name, last_name, gender, address, email, person_type) VALUES (?, ?, ?, ?, ?, ?)";
     $statement = $dbh->prepare($person_info);
     $statement->execute([$firstName, $lastName, $gender, $address, $emailAddress,$personType]);
-    echo 1;
 }
 ?>
