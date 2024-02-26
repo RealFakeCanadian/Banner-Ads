@@ -42,6 +42,32 @@ $( function() {
         }
     }
 
+    function checkEmail( o, n){
+        var isEmailValid = false;
+        $.ajax({
+            // Action
+            url: '_ajaxpostcommands.php',
+            // Method
+            type: 'POST',
+            async: false,
+            data: {
+                // Get value
+                emailAddress: $("input[name=emailAddress]").val(),
+                action: "getEmail"
+            },
+            success:function(returnData){
+                $("#console_log_display").text(returnData);
+                if(returnData === "false"){
+                    isEmailValid = false;
+                    o.addClass( "ui-state-error" );
+                    updateTips( n + " has already been used with us");
+                }
+                else isEmailValid = returnData === "true";
+            }
+        });
+        return isEmailValid;
+    }
+
     function addUser() {
         var valid = true;
 
@@ -56,14 +82,15 @@ $( function() {
         valid = valid && checkRegexp( firstName, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
         valid = valid && checkRegexp( lastName, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
         valid = valid && checkRegexp( emailAddress, emailRegex, "eg. ui@jquery.com" );
-        //valid = valid && checkEmail( emailAddress );
+        valid = valid && checkEmail( emailAddress,  "Email Address");
 
         if ( valid ) {
+            $("#console_log_display").text("all valid");
             allFields.removeClass( "ui-state-error" );
             updateTips( "" );
             $.ajax({
                 // Action
-                url: '_ajaxcommands.php',
+                url: '_ajaxpostcommands.php',
                 // Method
                 type: 'POST',
                 data: {

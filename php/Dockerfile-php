@@ -8,6 +8,7 @@ COPY ./php/bannerStyles.css /usr/src/app/bannerStyles.css
 COPY ./php/_ajaxscriptlibrary.js /usr/src/app/_ajaxscriptlibrary.js
 COPY ./php/_newpersonform.js /usr/src/app/_newpersonform.js
 COPY ./php/loadPeopleTable.php /usr/src/app/loadPeopleTable.php
+COPY ./php/_ajaxpostcommands.php /usr/src/app/_ajaxpostcommands.php
 # Move our jQuery files into the container
 RUN mkdir /usr/src/app/jquery/
 RUN mkdir /usr/src/app/jquery/external/
