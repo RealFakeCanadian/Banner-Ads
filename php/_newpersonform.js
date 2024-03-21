@@ -58,7 +58,6 @@ $( function() {
                 action: "getEmail"
             },
             success:function(returnData){
-                $("#console_log_display").text(returnData);
                 if(returnData === "false"){
                     isEmailValid = false;
                     o.addClass( "ui-state-error" );
@@ -89,7 +88,6 @@ $( function() {
         valid = valid && checkEmail( emailAddress,  "Email Address");
 
         if ( valid ) {
-            $("#console_log_display").text("all valid");
             allFields.removeClass( "ui-state-error" );
             updateTips( "" );
             $.ajax({

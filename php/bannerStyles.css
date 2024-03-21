@@ -25,3 +25,77 @@ table {
 .ui-draggable, .ui-droppable {
     background-position: top;
 }
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#container {
+    background-color: #fff;
+}
+
+#upper_banner {
+    text-align: center;
+}
+
+#upper_banner img {
+    max-width: 100%;
+}
+
+.list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+}
+
+.list th, .list td {
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    color: #000;
+}
+.list th {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#create-user {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#create-user:hover {
+    background-color: #2d8740;
+}
+#footer_container {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#console_log_display {
+    margin-top: 10px;
+}
+
+#dialog-form {
+    display: none;
+}
+
+.validateTips {
+    color: #f00;
+}
