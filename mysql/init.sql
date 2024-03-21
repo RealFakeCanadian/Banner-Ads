@@ -45,6 +45,8 @@ CREATE TABLE client_info (
 
 CREATE TABLE people (
                              id INT NOT NULL AUTO_INCREMENT,
+                             username varchar(250) NOT NULL,
+                             password varchar(250) NOT NULL,
                              first_name VARCHAR(100) NOT NULL,
                              last_name VARCHAR(100) NOT NULL,
                              gender VARCHAR(6) NOT NULL,
@@ -54,6 +56,6 @@ CREATE TABLE people (
                              PRIMARY KEY(id)
 );
 
-INSERT INTO people (first_name,last_name,gender,address,email,person_type)
+INSERT INTO people (username, password, first_name,last_name,gender,address,email,person_type)
 VALUES
-    ("first_name","last_name","gender","address","email","person_type");
+    ("username", "password","first_name","last_name","gender","address","email","person_type");

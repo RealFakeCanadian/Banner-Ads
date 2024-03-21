@@ -3,6 +3,8 @@ $( function() {
 
         // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
         emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+        username = $( "#username" ),
+        password = $( "#password" ),
         firstName = $( "#firstName" ),
         lastName = $( "#lastName" ),
         gender = $( "#gender" ),
@@ -71,6 +73,8 @@ $( function() {
     function addUser() {
         var valid = true;
 
+        valid = valid && checkLength( username, "Username", 1, 100 );
+        valid = valid && checkLength( password, "Password", 1, 100 );
         valid = valid && checkLength( firstName, "First Name", 1, 100 );
         valid = valid && checkLength( lastName, "Last Name", 1, 100 );
         valid = valid && checkLength( gender, "Gender", 4, 6 );
@@ -95,6 +99,8 @@ $( function() {
                 type: 'POST',
                 data: {
                     // Get value
+                    username: $("input[name=username]").val(),
+                    password: $("input[name=password]").val(),
                     firstName: $("input[name=firstName]").val(),
                     lastName: $("input[name=lastName]").val(),
                     gender: $("select[name=gender]").val(),
